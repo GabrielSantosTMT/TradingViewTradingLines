@@ -12,8 +12,6 @@ const TELEGRAM_API_URL = `https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMess
 
 app.post('/webhook', async (req, res) => {
     const alertMessage = req.body.message || DEFAULT_MESSAGE;
-    console.log('Received request:', req);
-    console.log('Received request body:', req.body);
     try {
         const response = await fetch(TELEGRAM_API_URL, {
             method: 'POST',
